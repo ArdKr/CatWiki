@@ -1,3 +1,11 @@
+import Head from "next/head";
+
 export default function Home() {
-  return <div>Initial Commit</div>;
+  return (
+    <div>
+      <Head>
+        <title>CatWiki - Homepage</title>
+      </Head>
+    </div>
+  );
 }
