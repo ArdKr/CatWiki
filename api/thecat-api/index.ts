@@ -11,7 +11,7 @@ interface GetRequestProps {
 }
 
 // Main function to make get requests to our api
-const get = async ({ path, params, headers }: GetRequestProps) => {
+export const get = async ({ path, params, headers }: GetRequestProps) => {
   const request = axios.create({
     baseURL,
     headers: {
