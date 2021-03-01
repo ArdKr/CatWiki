@@ -28,9 +28,7 @@ export const get = async ({ path, params, headers }: GetRequestProps) => {
 
 export const getCatBreeds = async () => {
   const requestParams = { path: "/breeds" };
-  const response = get(requestParams);
+  const response = await get(requestParams);
 
   return response;
 };
-
-export default 2;
