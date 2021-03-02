@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 
 import Head from "next/head";
 
@@ -9,29 +9,34 @@ import { updateCatBreeds } from "../redux/breedsSlice";
 // Cat API
 import { getCatBreeds } from "../api/thecat-api";
 
-export default function Home({ catBreeds }) {
-  catBreeds = JSON.parse(catBreeds);
-  const dispatch = useDispatch();
+// Components
+import Layout from "../components/Layout";
 
-  useEffect(() => {
-    dispatch(updateCatBreeds(catBreeds));
-  }, []);
+export default function Home({ catBreeds }) {
+  // catBreeds = useMemo(() => JSON.parse(catBreeds), [catBreeds]);
+  // const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   dispatch(updateCatBreeds(catBreeds));
+  // }, []);
 
   return (
     <div>
       <Head>
         <title>CatWiki - Homepage</title>
       </Head>
+
+      <Layout>test</Layout>
     </div>
   );
 }
 
 export const getServerSideProps = async () => {
-  const catBreedsApiResponse = await getCatBreeds();
+  // const catBreedsApiResponse = await getCatBreeds();
 
   return {
     props: {
-      catBreeds: JSON.stringify(catBreedsApiResponse.data),
+      // catBreeds: JSON.stringify(catBreedsApiResponse.data),
     },
   };
 };
