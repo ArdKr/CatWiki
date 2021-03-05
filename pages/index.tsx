@@ -53,7 +53,7 @@ export default function Home({ catBreeds }) {
             <DropdownSearch
               placeholder="Enter your breed"
               icon="/search.svg"
-              style={{ marginTop: "50px", width: "350px" }}
+              style={{ width: "350px" }}
               name="Search"
             />
           </div>
